@@ -26,7 +26,7 @@ body {
     font-family: 'Roboto', sans-serif;
     position: relative;
   }
-  
+
   table {
     font-family: 'Roboto', sans-serif;
     width: 50%;
@@ -58,6 +58,17 @@ body {
     width: 500px;
     height: 300px;
   }
+
+  .input-row {
+    display: flex;
+    justify-content: center; /* Выравнивание по горизонтали по центру */
+    align-items: center; /* Выравнивание по вертикали по центру */
+  }
+  
+  .input-container {
+    margin-right: 20px;
+    transform: translateX(+10px); /* Сдвиг влево на 10px */
+  }
   
   input {
     padding: 10px;
@@ -86,4 +97,3 @@ body {
   button:hover {
     background-color: #27ae60;
   }
-  
