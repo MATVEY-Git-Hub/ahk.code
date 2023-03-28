@@ -1,0 +1,89 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg, #fa709a, #9240fe, #63bce0);
+    background-size: 400% 400%;
+    animation: GradientAnimation 10s ease infinite;
+  }
+  
+  @keyframes GradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+  }
+  
+  table {
+    font-family: 'Roboto', sans-serif;
+    width: 50%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+    border: none;
+    border-collapse: collapse;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 20px;
+  }
+  
+  td, th {
+    padding: 10px;
+  }
+
+  textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 20px;
+    width: 500px;
+    height: 300px;
+  }
+  
+  input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 20px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  button {
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2ecc71;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #27ae60;
+  }
+  
