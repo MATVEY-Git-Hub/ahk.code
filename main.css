@@ -45,6 +45,8 @@ body {
   
   td, th {
     padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   textarea {
@@ -81,6 +83,16 @@ body {
     width: 200px;
     text-align: center;
   }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
   
   button {
     font-family: 'Roboto', sans-serif;
@@ -91,9 +103,58 @@ body {
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
   }
   
   button:hover {
     background-color: #27ae60;
+    transition: 0.3s ease;
+  }
+
+  button:active {
+    background-color: #096630;
+    transition: 0.01s ease;
+  }
+
+  .copy-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2ecc71;
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 18px;
+    visibility: hidden;
+    z-index: 1000;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  }
+
+  .savedZ {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2ecc71;
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 18px;
+    visibility: hidden;
+    z-index: 1000;
+  }
+
+  .savedC {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2ecc71;
+    color: white;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 18px;
+    visibility: hidden;
+    z-index: 1000;
   }
