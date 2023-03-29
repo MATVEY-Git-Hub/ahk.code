@@ -1,9 +1,23 @@
+var inputField = document.getElementById("myInput2");
+
+  inputField.addEventListener("input", function() {
+    var inputValue = inputField.value;
+    if (inputValue.length >= 1 && inputValue.charAt(0) !== "/") {
+      inputField.value = "/" + inputValue;
+    }
+    if (inputValue.includes("/") && inputValue.lastIndexOf("/") > 0) {
+      inputField.value = inputValue.substr(0, inputValue.lastIndexOf("/")) + inputValue.substr(inputValue.lastIndexOf("/") + 1);
+    }
+  });
+
 const inputField1 = document.getElementById('myInput');
 const saveButton1 = document.getElementById('saveBtn');
 
 const inputField2 = document.getElementById('myInput2');
 const saveButton2 = document.getElementById('saveBtn2');
 
+const savedC = document.getElementById('savedC');
+const savedZ = document.getElementById('savedZ');
 
 // При клике на первую кнопку сохранения...
 saveButton1.addEventListener('click', function() {
@@ -11,6 +25,19 @@ saveButton1.addEventListener('click', function() {
   const inputValue1 = inputField1.value;
   // Сохраняем значение в локальном хранилище
   localStorage.setItem('myInputValue1', inputValue1);
+  Toastify({
+    text: "Задержка сохранена!",
+    duration: 3000,
+    newWindow: true,
+    close: true,
+    gravity: "top", // `top` or `bottom`
+    position: "left", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to right, #2ecc71, #2ecc71",
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
 });
 
 // При клике на вторую кнопку сохранения...
@@ -19,6 +46,19 @@ saveButton2.addEventListener('click', function() {
   const inputValue2 = inputField2.value;
   // Сохраняем значение в локальном хранилище
   localStorage.setItem('myInputValue2', inputValue2);
+  Toastify({
+  text: "Команда сохранена!",
+  duration: 3000,
+  newWindow: true,
+  close: true,
+  gravity: "top", // `top` or `bottom`
+  position: "left", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "linear-gradient(to right, #2ecc71, #2ecc71",
+  },
+  onClick: function(){} // Callback after click
+}).showToast();
 });
 
 // Проверяем, есть ли сохраненное значение для первого поля ввода в локальном хранилище...
@@ -35,10 +75,49 @@ if (savedValue2) {
   inputField2.value = savedValue2;
 }
 
+const buttons = document.querySelectorAll('.clipboard-btn');
+const copyToast = document.getElementById('copy-toast');
+      
+for (const button of buttons) {
+   button.addEventListener('click', () => {
+      const textToCopy = `%${button.id}%`;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+         console.log('Text copied to clipboard');
+         Toastify({
+          text: "Текст скопирован в буфер обмена!",
+          duration: 3000,
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #2ecc71, #2ecc71",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
+      }).catch((err) => {
+         console.error('Failed to copy text: ', err);
+      });
+   });
+}
+
 function copy(){
     let inputValue2 = inputField2.value;
     if (!inputValue2.startsWith('/')) {
-      alert('Команда должна начинаться со знака "/"');
+      Toastify({
+        text: 'Команда должна начинаться со знака "/"',
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #cc2e55, #cc2e55)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
       return;
     }
     const inputField = document.getElementById('myInput');
@@ -53,4 +132,17 @@ function copy(){
     console.log(stroke)
 
     navigator.clipboard.writeText(stroke);
+    Toastify({
+      text: "Код скопирован!",
+      duration: 3000,
+      newWindow: true,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "left", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #2ecc71, #2ecc71",
+      },
+      onClick: function(){} // Callback after click
+    }).showToast();
 }
