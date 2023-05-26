@@ -1,65 +1,55 @@
 <!DOCTYPE html>
-<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="icon" href="ico.ico" type="image/x-icon">
-        <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-        <link rel="stylesheet" href="main.css">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-            </style>
-        <title>Автоматический код AHK</title>
-        <style>
-            input {
-                padding: 10px;
-        border: none;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        font-size: 16px;
-        outline: none;
-        margin-bottom: 20px;
-        width: 75px;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        }
-        </style>
-  <title>Сохранение значения в поле ввода</title>
-  <meta charset="UTF-8">
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="ico.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="stylesheet" href="main.css">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet"
+        type="text/css">
+    <title>Автоматический код AHK</title>
+    <meta charset="UTF-8">
 </head>
+
 <body>
     <form>
-        <textarea type="text" id="script" style="height: 395px; width: 1031px;" placeholder="Вставьте отыгровки"></textarea>
-          </div>
+        <textarea type="text" id="script" style="height: 395px; width: 1031px;"
+            placeholder="Вставьте отыгровки"></textarea>
+        </div>
         <div class="input-row">
-        <div class="input-container">
-          <input id="myInput2" name="myInput2" type="text" placeholder="/Команда">
-          <button id="saveBtn2" type="button">Сохранить</button>
-        </div>
-        <div class="input-container">
-          <input id="myInput" type="number" placeholder="Задержка">
-          <button id="saveBtn" type="button">Сохранить</button>
-        </div>
+            <div class="input-container">
+                <input id="myInput2" name="myInput2" type="text" placeholder="/Команда">
+                <button id="saveBtn2" type="button">Сохранить</button>
+            </div>
+            <div class="input-container">
+                <input id="myInput" type="number" placeholder="Задержка">
+                <button id="saveBtn" type="button">Сохранить</button>
+            </div>
         </div>
         <button class="Copy" id="Copy" onclick="copy()" type="button">Скопировать код</button>
         <table>
             <tr>
-              <td><button id="ro1" type="button" class="clipboard-btn">%ro1% = л - ла</button></td>
-              <td><button id="ro3" type="button" class="clipboard-btn">%ro3% = ил - ила</button></td>
-              <td><button id="ro5" type="button" class="clipboard-btn">%ro5% = к - кла</button></td>
-              <td><button id="ro7" type="button" class="clipboard-btn">%ro7% = ёл - ла</button></td>
+                <td><button id="ro1" type="button" class="clipboard-btn">%ro1% = л - ла</button></td>
+                <td><button id="ro3" type="button" class="clipboard-btn">%ro3% = ил - ила</button></td>
+                <td><button id="ro5" type="button" class="clipboard-btn">%ro5% = к - кла</button></td>
+                <td><button id="ro7" type="button" class="clipboard-btn">%ro7% = ёл - ла</button></td>
             </tr>
             <tr>
-              <td><button id="ro2" type="button" class="clipboard-btn">%ro2% = ёс - есла</button></td>
-              <td><button id="ro4" type="button" class="clipboard-btn">%ro4% = р - рла</button></td>
-              <td><button id="ro6" type="button" class="clipboard-btn">%ro6% = ся - ась</button></td>
-              <td><button id="ro8" type="button" class="clipboard-btn">%ro8% = ёл - ела</button></td>
+                <td><button id="ro2" type="button" class="clipboard-btn">%ro2% = ёс - есла</button></td>
+                <td><button id="ro4" type="button" class="clipboard-btn">%ro4% = р - рла</button></td>
+                <td><button id="ro6" type="button" class="clipboard-btn">%ro6% = ся - ась</button></td>
+                <td><button id="ro8" type="button" class="clipboard-btn">%ro8% = ёл - ела</button></td>
             </tr>
-          </table>
-      </form>
+        </table>
+    </form>
     <button onclick="github()" class="buttomGH"><span style="margin-right: 7px" class="mdi mdi-github"></span>Код на
         GitHub</button>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="js.js"></script>
 </body>
+
 </html>
