@@ -1,5 +1,10 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
     font-family: 'Roboto', sans-serif;
+}
+
+body {
     background: linear-gradient(45deg, #fa709a, #9240fe, #63bce0);
     background-size: 400% 400%;
     animation: GradientAnimation 10s ease infinite;
